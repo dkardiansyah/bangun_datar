@@ -15,22 +15,37 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
-            margin: EdgeInsets.all(8),
-            padding: EdgeInsets.symmetric(vertical: 8,horizontal: 16),
-            decoration: BoxDecoration(
-              color: Colors.blue
-            ),
-            child: Text("Persegi"),
+          CustomMenu(imageAssets: "assets/persegi.jpg", title: "persegi"),
+          CustomMenu(imageAssets: "assets/segitiga.jpg", title: "segitiga"),
+        ],
+      ),
+    );
+  }
+}
+
+class CustomMenu extends StatelessWidget {
+  const CustomMenu({
+    super.key,
+    required this.imageAssets,
+    required this.title,
+  });
+
+  final String imageAssets;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(8),
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      decoration: BoxDecoration(color: Colors.blue),
+      child: Column(
+        children: [
+          Image.asset(
+            imageAssets,
+            height: 100,
           ),
-          Container(
-            margin: EdgeInsets.all(8),
-          padding: EdgeInsets.symmetric(vertical: 8,horizontal: 16),
-          decoration: BoxDecoration(
-              color: Colors.green
-          ),
-          child: Text("Segitiga")
-          ),
+          Text("title"),
         ],
       ),
     );
