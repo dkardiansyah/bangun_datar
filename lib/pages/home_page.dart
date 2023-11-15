@@ -1,4 +1,6 @@
+import 'package:bangun_datar_app/pages/Panjang.dart';
 import 'package:bangun_datar_app/pages/Persegi.dart';
+import 'package:bangun_datar_app/pages/Segitiga.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,15 +25,20 @@ class HomePage extends StatelessWidget {
 
           }
         ,child: CustomMenu(imageAssets: "assets/persegi.jpg", title: "persegi")),
-          Row(
-            children: [
-              Expanded(child: CustomMenu(imageAssets: "assets/segitiga.jpg", title: "segitiga")),
-              Expanded(child: CustomMenu(imageAssets: "assets/segitiga.jpg", title: "segitiga")),
-              Expanded(child: CustomMenu(imageAssets: "assets/segitiga.jpg", title: "segitiga")),
-            ],
-          ),
-        ],
-      ),
+          InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>PanjangPage()));
+
+              }
+              ,child: CustomMenu(imageAssets: "assets/panjang.jpg", title: "persegiPanjang")),
+          InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SegitigaPage()));
+
+              }
+              ,child: CustomMenu(imageAssets: "assets/segitiga.jpg", title: "Segitiga")),
+           ]
+    )
     );
   }
 }
